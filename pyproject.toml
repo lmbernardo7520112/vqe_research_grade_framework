@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantumopt"
+version = "0.1.0"
+description = "A research-grade framework for variational quantum optimization algorithms."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Research Engineering Group", email = "research@example.com"},
+]
+dependencies = [
+    "qiskit>=1.0.0",
+    "qiskit-aer>=0.13.0",
+    "qiskit-algorithms>=0.3.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "isort>=5.12",
+    "mypy>=1.0",
+    "flake8>=6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
